@@ -42,11 +42,11 @@ jobs:
       run: |
         echo "--- Starting LLM Generation Script Run ---"
         # 1. Execute the script (Functional CI Test)
-        python demo_make_llm_call.py
+        python 01-llm_call.py
         
         # 2. Validation Check: Ensure the output file was created (Test Success)
-        if [ ! -s loan_payment.py ]; then
-          echo "CI Failed: loan_payment.py was not created or is empty. Check API key and script logic."
+        if [ ! -s loan_pmt.py ]; then
+          echo "CI Failed: loan_pmt.py was not created or is empty. Check API key and script logic."
           exit 1
         fi
-        echo "CI Passed: loan_payment.py created successfully."
+        echo "CI Passed: loan_pmt.py created successfully."
